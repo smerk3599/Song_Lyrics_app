@@ -1,0 +1,7 @@
+.lyricLine {
+  max-width: 100px;
+}
+
+.lyricsBox{
+  white-space: pre-wrap;
+}
