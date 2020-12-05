@@ -58,10 +58,10 @@ $(() => {
   }
 
 // processStringOfLyrics(testString);
-    $('form').on('click',(event) => {
+    $('#musician').on('click',(event) => {
       event.preventDefault();
 
-      const bandName = $('input[type="text"]').val();
+      const bandName = $('input[id="musician"]').val();
 
       $.ajax({
         url: `https://api.lyrics.ovh/v1/${bandName}`,
