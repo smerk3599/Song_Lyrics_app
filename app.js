@@ -61,7 +61,7 @@ $(() => {
     $('#musician').on('click',(event) => {
       event.preventDefault();
 
-      const bandName = $('input[id="musician"]').val();
+      const bandName = $('input[type ="text"]').val();
 
       $.ajax({
         url: `https://api.lyrics.ovh/v1/${bandName}`,
