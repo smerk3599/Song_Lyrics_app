@@ -4,14 +4,24 @@ body {
   background-repeat: no-repeat;
 }
 
+.transparent{
+  height: 90%;
+  width: 90%;
+  background: rgba(225,225,225, .2);
+  border-radius: 50px;
+  margin: 0 auto;
+}
+
 #musician {
   margin: 50px 38%;
 }
 
 .band {
-  font-size: 3em;
+  font-size: 2em;
   border-radius: 50px;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 1)
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 1);
+  margin-top: 30px;
+  text-align: center;
 }
 
 #lyricsBox {
@@ -24,4 +34,5 @@ body {
 
 #modal {
   /* display: none; */
+  margin: 0 auto;
 }

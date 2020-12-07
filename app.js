@@ -58,27 +58,36 @@ $(() => {
   //     // }
   //   }
   // }
+  //Grabbing the musician button.
+  const $openButton1 = $('#openModal1');
+  // Grabbing modal one.
+  const $modal1 = $('')
+  const openModal = () => {
+    $modal.css('display', 'block');
+  }
 
 // processStringOfLyrics(testString);
-    $('#musician').on('click',(event) => {
-      event.preventDefault();
+  $('#musician').on('click',(event) => {
+    event.preventDefault();
 
-      // const bandName = $('input[type ="text"]').val();
-      const bandName = $('.band').val();
-
+    // const bandName = $('input[type ="text"]').val();
+    const bandName = $('.band').val();
+    $('#song').on('click',(event) => {
+      const songName = $('.songName').val();
+      console.log(`${bandName}/${songName}`);
       $.ajax({
-        url: `https://api.lyrics.ovh/v1/${bandName}`,
+        url: `https://api.lyrics.ovh/v1/${bandName}/${songName}`,
         type: 'GET'
       }).then(
 
         (song)=>{
           console.log(song.lyrics);
           $('#lyricsBox').text(song.lyrics);
-          // processStringOfLyrics(song);
-          // let $eachLyricDiv = $('<div class="lyricLine">');
-          // $eachLyricDiv.text(song.lyrics);
-          // //Append that div to the main div for the box the lyrics will be in
-          // $eachLyricDiv.appendTo('.lyricsBox');
+        // processStringOfLyrics(song);
+        // let $eachLyricDiv = $('<div class="lyricLine">');
+        // $eachLyricDiv.text(song.lyrics);
+        // //Append that div to the main div for the box the lyrics will be in
+        // $eachLyricDiv.appendTo('.lyricsBox');
 
         },
         ()=>{
@@ -86,6 +95,8 @@ $(() => {
           alert("You must enter the name of a real band or singer!");
         }
       );
-      $('#musician').trigger('reset');
-  })
-})
+      $('#song').trigger('reset');
+    });
+    $('#musician').trigger('reset');
+  });
+});
