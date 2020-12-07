@@ -16,7 +16,9 @@ $(() => {
     // console.log(string.length);
     //For loop to break the lyric string into an array
     for (var i = 0; i < string.length; i++) {
-      stringArray[i] = string[i];
+      if ((/[ -z]/).test(string[i]) || (string[i] === '\r')){
+        stringArray[i] = string[i];
+      }
     }
     console.log(stringArray);
 
@@ -70,8 +72,8 @@ $(() => {
 
         (song)=>{
           console.log(song.lyrics);
-          // $('.lyricsBox').text(song.lyrics);
-          processStringOfLyrics(song);
+          $('#lyricsBox').text(song.lyrics);
+          // processStringOfLyrics(song);
           // let $eachLyricDiv = $('<div class="lyricLine">');
           // $eachLyricDiv.text(song.lyrics);
           // //Append that div to the main div for the box the lyrics will be in

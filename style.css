@@ -1,7 +1,9 @@
-.lyricLine {
-  max-width: 100px;
-}
 
-.lyricsBox{
-  white-space: pre-wrap;
+
+#lyricsBox {
+  border: none;
+  resize: none;
+  height: 750px;
+  width: 50%;
+  margin: 0 auto;
 }

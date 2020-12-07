@@ -2,22 +2,29 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Display Lyrics of Songs</title>
+        <link rel="stylesheet" href="style.css">
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" charset="utf-8"></script>
         <script src="app.js" charset="utf-8"></script>
     </head>
     <body>
       <form id="musician">
 	      <input type="text" placeholder="Name of the Band/Musician"/>
-	      <button id="Band/Musicians Name">What Band/Musician?</button>
+	      <button id="band/musiciansName openModal">What Band/Musician?</button>
       </form>
-      <form id="song">
-        <input type="text" placeholder="Name of the Band/Musician"/>
-        <button id="Band/Musicians Name">What Band/Musician?</button>
-      </form>
-      <h1>Song Lyrics</h1>
-      <div class="lyricsBox">
+      <div id="modal">
+        <div id="modal-textbox">
 
+        </div>
+        <form id="song">
+          <input type="text" placeholder="Name of the Song"/>
+          <button id="songName">What Song?</button>
+        </form>
+
+        <h1>Song Lyrics</h1>
+        <textarea id="lyricsBox">
+
+        </textarea>
       </div>
     </body>
 </html>
