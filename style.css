@@ -1,4 +1,18 @@
+body {
+  background-image: url("./images/pexels-eric-smart-2247677.jpg" );
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
+#musician {
+  margin: 50px 38%;
+}
+
+.band {
+  font-size: 3em;
+  border-radius: 50px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 1)
+}
 
 #lyricsBox {
   border: none;
@@ -6,4 +20,8 @@
   height: 750px;
   width: 50%;
   margin: 0 auto;
+}
+
+#modal {
+  /* display: none; */
 }

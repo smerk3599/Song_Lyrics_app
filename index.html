@@ -8,23 +8,26 @@
         <script src="app.js" charset="utf-8"></script>
     </head>
     <body>
-      <form id="musician">
-	      <input type="text" placeholder="Name of the Band/Musician"/>
-	      <button id="band/musiciansName openModal">What Band/Musician?</button>
-      </form>
-      <div id="modal">
-        <div id="modal-textbox">
+      <div class="transparent">
+        <!-- <img src="./images/pexels-eric-smart-2247677.jpg" alt="Singer"> -->
+        <form id="musician">
+	         <div class="band" id="openModal1">Enter the Band/Musician</div>
+           <input type="text" class="band" placeholder="Singer/Musician" autofocus/>
+         </form>
+         <div id="modal">
+           <div id="modal-textbox">
 
-        </div>
-        <form id="song">
-          <input type="text" placeholder="Name of the Song"/>
-          <button id="songName">What Song?</button>
-        </form>
+           </div>
+           <form id="song">
+             <input type="text" placeholder="Name of the Song"/>
+             <button id="songName">What Song?</button>
+           </form>
 
-        <h1>Song Lyrics</h1>
-        <textarea id="lyricsBox">
+           <h1>Song Lyrics</h1>
+           <textarea id="lyricsBox">
 
-        </textarea>
-      </div>
+           </textarea>
+         </div>
+       </div>
     </body>
 </html>
