@@ -3,24 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Display Lyrics of Songs</title>
+    <!-- Link css, javascript and jquery -->
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" charset="utf-8"></script>
     <script src="app.js" charset="utf-8"></script>
   </head>
   <body>
     <div class="transparent">
-
+      <!-- form for the musicians name -->
       <form id="musician">
-	      <div class="band" id="openModal1">Enter the Band/ Musician</div>
+	      <div class="band" id="openModal1 band">Enter the Band/ Musician</div>
         <input type="text" class="band" placeholder="Singer/Musician" autofocus/>
       </form>
       <div id="modal1">
-        <form id="song">
-          <input type="text" class="songName" placeholder="Name of the Song"/>
-          <button class="songName">What Song?</button>
+        <!-- Form to get the song name -->
+        <form id="getSong">
+          <input type="text" id ="songName" class="songName" placeholder="Name of the Song"/>
+          <button class="songName" id="openModal2">What Song?</button>
         </form>
+        <button type="button" id="close1" name="button"></button>
         <div id="modal2">
           <h1>Song Lyrics</h1>
+          <button type="button" id="close2" name="button"></button>
           <textarea id="lyricsBox">
 
           </textarea>
