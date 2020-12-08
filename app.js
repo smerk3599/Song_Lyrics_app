@@ -62,7 +62,7 @@ $(() => {
   let bandName = '';
   let songName = '';
   //Grabbing the musician button.
-  const $openButton1 = $('#musician');
+  const $openButton1 = $('#first-page');
   // Grabbing modal one.
   const $modal1 = $('#modal1');
   // Close Modal one
@@ -76,8 +76,10 @@ $(() => {
 
   //Function to open modal 1
   const openModal1 = () => {
+    $('#page-2-title').text(`${bandName}`);
     $modal1.css('display', 'block');
     $openButton1.css('display', 'none');
+    $('#band').trigger('reset');
     $('#songName').focus();
   }
 
@@ -85,44 +87,53 @@ $(() => {
   const openModal2 = () => {
     $modal1.css('display', 'none');
     $modal2.css('display', 'block');
-
+    $('#songName').trigger('reset');
   }
 
   //Function to close modal 1
   const closeModal1 = () => {
     $modal1.css('display', 'none');
     $openButton1.css('display', 'block');
-
+    $('#band').focus();
+    $('#songName').trigger('reset');
   }
 
   //Function to close modal 2
   const closeModal2 = () => {
     $modal2.css('display', 'none');
     $modal1.css('display', 'block');
+    $('#songName').focus();
   }
 
   //Event listeners to open each modal
   $openButton1.on('click', openModal1);
   $openButton2.on('click', openModal2);
+
   //Event listeners to close each modal
   $newMusician.on('click', closeModal1);
   $newSong.on('click', closeModal2);
 
 // processStringOfLyrics(testString);
   $('#musician').on('click',(event) => {
+    //Keep the console.log from emptying
     event.preventDefault();
-
-    // bandName = $('input[type ="text"]').val();
+    // Assign a variable to the name of the band
     bandName = $('#band').val();
     console.log(bandName);
+
     $('#musician').trigger('reset');
   });
 
   $('#getSong').on('click',(event) => {
+    //Keep the console.log from emptying
     event.preventDefault();
+    // Assign a variable to the name of the song
     songName = $('#songName').val();
     console.log(songName);
     console.log(`${bandName}/${songName}`);
+    $('getSong').trigger('reset');
+
+    // Ajax call for the API
     $.ajax({
       url: `https://api.lyrics.ovh/v1/${bandName}/${songName}`,
       type: 'GET',
@@ -142,6 +153,5 @@ $(() => {
         alert("What you entered doesn't return a song!");
       }
     );
-    $('#song').trigger('reset');
     });
 });

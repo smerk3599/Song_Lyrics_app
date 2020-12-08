@@ -10,18 +10,20 @@
   </head>
   <body>
     <div class="transparent">
-      <div class="">
+      <div id="first-page">
         <h1>Retrieve the Lyrics of a Song</h1>
         <!-- form for the musicians name -->
         <form id="musician">
           <input type="text" class="band" id="band" placeholder="Enter a Band/Singer" autofocus/>
 	        <div class="band" id="openModal1 band">Click Here!</div>
         </form>
+      </div>
       <div id="modal1">
         <!-- Form to get the song name -->
+        <h1 id="page-2-title"></h1>
         <form id="getSong">
           <input type="text" id ="songName" class="songName" placeholder="Name of the Song"/>
-          <button class="songName" id="openModal2">Click Here!</button>
+          <div class="songName" id="openModal2">Click Here!</div>
         </form>
         <button type="button" class="modal-button" id="close1" name="button">Enter a new Band/Musician</button>
       </div>
@@ -32,6 +34,5 @@
 
         </textarea>
       </div>
-    </div>
   </body>
 </html>
