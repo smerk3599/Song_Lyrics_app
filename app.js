@@ -31,7 +31,7 @@ $(() => {
 
   //Function to open modal 2
   const openModal2 = () => {
-    //originally a title for the second modal that included
+    //originally a title for the second modal that included band name and song name
     // $('#page-3-title').text(`Song Lyrics for ${bandName}'s  ${songName}`);
     //hide modal 1
     $modal1.css('display', 'none');
@@ -79,7 +79,6 @@ $(() => {
     event.preventDefault();
     // Assign a variable to the name of the band
     bandName = $('#band').val();
-    console.log(bandName);
     //reset the musician input box
     $('#musician').trigger('reset');
   });
@@ -89,7 +88,6 @@ $(() => {
     event.preventDefault();
     // Assign a variable to the name of the song
     songName = $('#songName').val();
-    console.log(`${bandName}/${songName}`);
     //reset the song input box
     $('#getSong').trigger('reset');
 
@@ -102,7 +100,6 @@ $(() => {
       (song)=>{
         // assign the retreived lyrics to the text area
         $('#lyricsBox').text(song.lyrics);
-        console.log(songName);
 
       },
       ()=>{
