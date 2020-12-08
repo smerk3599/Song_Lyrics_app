@@ -4,7 +4,8 @@ body {
   background-repeat: no-repeat;
 }
 
-.transparent{
+.transparent {
+  min-height: 1000px;
   height: 90%;
   width: 90%;
   background: rgba(225,225,225, .2);
@@ -12,11 +13,15 @@ body {
   margin: 0 auto;
 }
 
-#musician {
+h1 {
+    text-align: center;
+}
+
+#musician, #getSong {
   margin: 50px 38%;
 }
 
-.band {
+.band, .songName {
   font-size: 2em;
   border-radius: 50px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 1);
@@ -32,7 +37,11 @@ body {
   margin: 0 auto;
 }
 
-#modal {
-  /* display: none; */
+#modal1, #modal2 {
+  display: none;
   margin: 0 auto;
+}
+
+.modal-button {
+  background-color: darkgrey;
 }

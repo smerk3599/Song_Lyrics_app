@@ -10,25 +10,27 @@
   </head>
   <body>
     <div class="transparent">
-      <!-- form for the musicians name -->
-      <form id="musician">
-	      <div class="band" id="openModal1 band">Enter the Band/ Musician</div>
-        <input type="text" class="band" placeholder="Singer/Musician" autofocus/>
-      </form>
+      <div class="">
+        <h1>Retrieve the Lyrics of a Song</h1>
+        <!-- form for the musicians name -->
+        <form id="musician">
+          <input type="text" class="band" id="band" placeholder="Enter a Band/Singer" autofocus/>
+	        <div class="band" id="openModal1 band">Click Here!</div>
+        </form>
       <div id="modal1">
         <!-- Form to get the song name -->
         <form id="getSong">
           <input type="text" id ="songName" class="songName" placeholder="Name of the Song"/>
-          <button class="songName" id="openModal2">What Song?</button>
+          <button class="songName" id="openModal2">Click Here!</button>
         </form>
-        <button type="button" id="close1" name="button"></button>
-        <div id="modal2">
-          <h1>Song Lyrics</h1>
-          <button type="button" id="close2" name="button"></button>
-          <textarea id="lyricsBox">
+        <button type="button" class="modal-button" id="close1" name="button">Enter a new Band/Musician</button>
+      </div>
+      <div id="modal2">
+        <h2>Song Lyrics</h2>
+        <button type="button" class="modal-button" id="close2" name="button">Enter a Different Song</button>
+        <textarea id="lyricsBox">
 
-          </textarea>
-        </div>
+        </textarea>
       </div>
     </div>
   </body>

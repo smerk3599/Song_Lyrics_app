@@ -62,7 +62,7 @@ $(() => {
   let bandName = '';
   let songName = '';
   //Grabbing the musician button.
-  const $openButton1 = $('#openModal1');
+  const $openButton1 = $('#musician');
   // Grabbing modal one.
   const $modal1 = $('#modal1');
   // Close Modal one
@@ -74,21 +74,46 @@ $(() => {
     // Close Modal two
   const $newSong = $('#close2');
 
-
+  //Function to open modal 1
   const openModal1 = () => {
+    $modal1.css('display', 'block');
+    $openButton1.css('display', 'none');
+    $('#songName').focus();
+  }
+
+  //Function to open modal 2
+  const openModal2 = () => {
+    $modal1.css('display', 'none');
+    $modal2.css('display', 'block');
+
+  }
+
+  //Function to close modal 1
+  const closeModal1 = () => {
+    $modal1.css('display', 'none');
+    $openButton1.css('display', 'block');
+
+  }
+
+  //Function to close modal 2
+  const closeModal2 = () => {
+    $modal2.css('display', 'none');
     $modal1.css('display', 'block');
   }
 
-  const openModal2 = () => {
-    $modal2.css('display', 'block');
-  }
+  //Event listeners to open each modal
+  $openButton1.on('click', openModal1);
+  $openButton2.on('click', openModal2);
+  //Event listeners to close each modal
+  $newMusician.on('click', closeModal1);
+  $newSong.on('click', closeModal2);
 
 // processStringOfLyrics(testString);
   $('#musician').on('click',(event) => {
     event.preventDefault();
 
-    bandName = $('input[type ="text"]').val();
-    // const bandName = $('.band').val();
+    // bandName = $('input[type ="text"]').val();
+    bandName = $('#band').val();
     console.log(bandName);
     $('#musician').trigger('reset');
   });
@@ -114,7 +139,7 @@ $(() => {
       },
       ()=>{
         console.log('bad request');
-        alert("You must enter the name of a real band or singer!");
+        alert("What you entered doesn't return a song!");
       }
     );
     $('#song').trigger('reset');
