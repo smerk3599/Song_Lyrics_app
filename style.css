@@ -1,7 +1,9 @@
 body {
+  background: #2D5669;
   background-image: url("./images/pexels-eric-smart-2247677.jpg" );
   background-size: cover;
   background-repeat: no-repeat;
+
 }
 
 .transparent {
